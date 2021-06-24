@@ -21,25 +21,41 @@ int main(void){
     }
   }
   while(option != 3);
-  system("Pause");
+  system("pause");
 }
 
 int main_menu(){
-  int option;
+  int nchoose;
   printf("Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - Junho, 2021");
   do{  
     printf("\nChoose a option entering the corresponding number:\n1 - ???\n2 - ???\n3 - Quit\n");
-    scanf("%d", &option);
+    scanf("%d", &nchoose);
     
-    if((option < 1) || (option > 3)){
+    if((nchoose < 1) || (nchoose > 3)){
       printf("Please, enter a valid option!");
     }
   }
-  while((option < 1) || (option > 3));
-  return option;
+  while((nchoose < 1) || (nchoose > 3));
+  return nchoose;
 }
 
 int sub_menu01(){
+  int option = 0;
+  do{
+    printf("Choose a option entering the corresponding number:\n1 - ???\n2 - Return\n");
+    scanf("%d", &option);
+    switch(option){
+      case 1:
+        printf("Still in development, come back later!");
+        break;
+      case 2:
+        break;    
+    }
+  }
+  while(option != 2);
+  return option;
+}
+int sub_menu02(){
   int option = 0;
   do{
     switch(option){
@@ -50,4 +66,6 @@ int sub_menu01(){
         break;    
     }
   }
+  while(option != 2);
+  return option;
 }
