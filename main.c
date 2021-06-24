@@ -21,7 +21,7 @@ int main(void){
     }
   }
   while(option != 3);
-  system("pause");
+  system("cls||clear");
 }
 
 int main_menu(){
@@ -30,6 +30,7 @@ int main_menu(){
   do{  
     printf("\nChoose a option entering the corresponding number:\n1 - ???\n2 - ???\n3 - Quit\n");
     scanf("%d", &nchoose);
+    system("cls||clear");
     
     if((nchoose < 1) || (nchoose > 3)){
       printf("Please, enter a valid option!");
@@ -44,10 +45,12 @@ int sub_menu01(){
   do{
     printf("Choose a option entering the corresponding number:\n1 - ???\n2 - Return\n");
     scanf("%d", &option);
+    system("cls||clear");
     switch(option){
       case 1:
-        printf("Still in development, come back later!");
+        printf("Still in development, come back later!\n");
         break;
+        system("cls");
       case 2:
         break;    
     }
@@ -58,9 +61,12 @@ int sub_menu01(){
 int sub_menu02(){
   int option = 0;
   do{
+    printf("Choose a option entering the corresponding numebr:\n1 - ???\n2 - Return\n");
+    scanf("%d", &option);
+    system("cls||clear");
     switch(option){
       case 1:
-        printf("Still in development, come back later!");
+        printf("Still in development, come back later!\n");
         break;
       case 2:
         break;    
