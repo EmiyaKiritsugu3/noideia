@@ -26,9 +26,9 @@ int main(void){
 
 int main_menu(){
   int nchoose;
-  printf("Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - Junho, 2021");
+  printf("Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021");
   do{  
-    printf("\nChoose a option entering the corresponding number:\n1 - ???\n2 - ???\n3 - Quit\n");
+    printf("\nChoose a option entering the corresponding number:\n1 - Cadastrar Livro\n2 - Visualizar Biblioteca\n3 - Quit\n");
     scanf("%d", &nchoose);
     system("cls||clear");
     
