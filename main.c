@@ -53,16 +53,20 @@ int sub_menu01(){
         printf("Still in development, come back later!\n");
         break;
       case 2:
-        break;    
+        break;
+      default:
+        printf("Please, enter a valid option!\n");    
     }
   }
   while(option != 2);
   return option;
 }
 int sub_menu02(){
+  system("cls||clear");
   int option = 0;
+  printf("Choose a option entering the corresponding number:\n");
   do{
-    printf("Choose a option entering the corresponding numebr:\n1 - ???\n2 - Return\n");
+    printf("\n1 - ???\n2 - Return\n");
     scanf("%d", &option);
     system("cls||clear");
     switch(option){
@@ -70,7 +74,9 @@ int sub_menu02(){
         printf("Still in development, come back later!\n");
         break;
       case 2:
-        break;    
+        break;
+      default:
+      printf("Please, enter a valid option!\n");   
     }
   }
   while(option != 2);
