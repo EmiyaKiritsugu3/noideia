@@ -4,7 +4,9 @@
 int main_menu(){
   system("cls||clear");
   int nchoose;
-  printf("Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021\n\nChoose a option entering the corresponding number:\n");
+  printf(
+    "Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021"
+    "\n\nChoose a option entering the corresponding number:\n");
   do{  
     printf("\n1 - Cadastrar Livro\n2 - Visualizar Biblioteca\n3 - Quit\n");
     scanf("%d", &nchoose);

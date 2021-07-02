@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include "menus.h"
 
-int main_menu();
-int sub_menu01();
-int sub_menu02();
-
 int main(void){
   int option = 0;
   do{
@@ -20,7 +16,6 @@ int main(void){
       case 3:
         break;
     }
-  }
-  while(option != 3);
+  }while(option != 3);
 }
 
