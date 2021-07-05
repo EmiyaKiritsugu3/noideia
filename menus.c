@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct book Book;
 struct book{
@@ -15,17 +16,18 @@ typedef struct user{
 
 
 
-
+Book first;
 void mainMenu();
 void subMenu01();
 void subMenu02();
 void registerBook(Book* b, int i);
-void viewBook(Book* b, int i);
+void viewBook();
 const char * header();
 const char * messageError();
 
 int op;
 int nBook;
+int n;
 
 void mainMenu(){
   
@@ -56,14 +58,14 @@ void mainMenu(){
 
 void subMenu01(){
   
-  int n = 0;
+  //int n = 0;
   op = 0;
-  Book first;
+  
   system("cls||clear");
   printf("%s", header());
   
   do{  
-    puts("\n1 - Register\n2 - Delete\n3 - View Library\n4 - Return");
+    puts("\n1 - Register\n2 - View Library\n3 - Delete\n4 - Return");
     scanf("%d", &op);
     system("cls||clear");
     switch(op){
@@ -71,7 +73,7 @@ void subMenu01(){
       registerBook(&first, n);
       break;
       case 2:
-      viewBook(&first, n);
+      viewBook();
       break;
       case 3:
       printf("Null");
@@ -125,7 +127,6 @@ const char * messageError(){
 void registerBook(Book* b, int i){
   
   int answer;
-  nBook = 0;
 
   do{
     system("cls||clear");
@@ -136,18 +137,14 @@ void registerBook(Book* b, int i){
     printf("%s", "ISBN: ");
     scanf("%d", &b[i].isbn);
     nBook++;
-    printf("%s", "Register another book? ");
+    printf("%s", "Register another book? 1 for yes, 0 for not: ");
     scanf("%d", &answer);
 
   }while(answer != 0);
 }  
 
 void viewBook(Book* b, int i){
-  
-  
   printf("Tittle: %s", b[i].tittle);
   printf("Author: %s", b[i].author);
   printf("ISBN: %d", b[i].isbn);
-  for(int i = 0; i <= nBook; i++) {
-  }
 }
