@@ -20,10 +20,12 @@ void mainMenu();
 void subMenu01();
 void subMenu02();
 void registerBook(Book* b, int i);
+void viewBook(Book* b, int i);
 const char * header();
 const char * messageError();
 
 int op;
+int nBook;
 
 void mainMenu(){
   
@@ -69,7 +71,7 @@ void subMenu01(){
       registerBook(&first, n);
       break;
       case 2:
-      printf("kk");
+      viewBook(&first, n);
       break;
       case 3:
       printf("Null");
@@ -121,11 +123,31 @@ const char * messageError(){
 }
 
 void registerBook(Book* b, int i){
-  printf("%s", "Book Tittle: ");
-  scanf("%s", b[i].tittle);
-  printf("%s", "Book Author: ");
-  scanf("%s", b[i].author);
-  printf("%s", "ISBN: ");
-  scanf("%d", &b[i].isbn);
-  getchar();
+  
+  int answer;
+  nBook = 0;
+
+  do{
+    system("cls||clear");
+    printf("%s", "Book Tittle: ");
+    scanf("%s", b[i].tittle);
+    printf("%s", "Book Author: ");
+    scanf("%s", b[i].author);
+    printf("%s", "ISBN: ");
+    scanf("%d", &b[i].isbn);
+    nBook++;
+    printf("%s", "Register another book? ");
+    scanf("%d", &answer);
+
+  }while(answer != 0);
+}  
+
+void viewBook(Book* b, int i){
+  
+  
+  printf("Tittle: %s", b[i].tittle);
+  printf("Author: %s", b[i].author);
+  printf("ISBN: %d", b[i].isbn);
+  for(int i = 0; i <= nBook; i++) {
+  }
 }
