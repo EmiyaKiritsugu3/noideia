@@ -1,59 +1,103 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main_menu(){
+void mainMenu();
+void subMenu01();
+void subMenu02();
+const char * header();
+const char * messageError();
+
+int op;
+
+void mainMenu(){
+  
+  op = 0;
   system("cls||clear");
-  int nchoose;
-  printf(
-    "Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021"
-    "\n\nChoose a option entering the corresponding number:\n");
-  do{  
-    printf("\n1 - Cadastrar Livro\n2 - Visualizar Biblioteca\n3 - Quit\n");
-    scanf("%d", &nchoose);
-    system("cls||clear");
+  printf("%s", header());
+  
+  do{
+    puts("\n1 - Books\n2 - People\n3 - Sair");
+    scanf("%d", &op);
     
-    if((nchoose < 1) || (nchoose > 3)){
-      printf("Please, enter a valid option!\n");
+    switch(op){
+      case 1:
+        subMenu01();
+        break;
+      case 2:
+        subMenu02();
+        break;
+      case 3:
+        system("cls||clear");
+        break;
+      default:
+        system("cls||clear");
+        printf("%s", messageError());
     }
-  }while((nchoose < 1) || (nchoose > 3));
-  return nchoose;
+  }while(op != 3);
 }
 
-void sub_menu01(){
+void subMenu01(){
+  
+  op = 0;
   system("cls||clear");
-  int option = 0;
-  printf("Choose a option entering the corresponding number:\n");
-  do{
-    printf("\n1 - ???\n2 - Return\n");
-    scanf("%d", &option);
+  printf("%s", header());
+  
+  do{  
+    puts("\n1 - Register\n2 - Delete\n3 - View Library\n4 - Return");
+    scanf("%d", &op);
     system("cls||clear");
-    switch(option){
+    switch(op){
       case 1:
-        printf("Still in development, come back later!\n");
-        break;
+      printf("oo");
+      break;
       case 2:
-        break;
+      printf("kk");
+      break;
+      case 3:
+      printf("Null");
+      case 4:
+      mainMenu();
+      break;
       default:
-        printf("Please, enter a valid option!\n");    
+      printf("%s", messageError());
     }
-  }while(option != 2);
+  }while(op != 3);
 }
-void sub_menu02(){
+
+void subMenu02(){
+  
+  op = 0;
   system("cls||clear");
-  int option = 0;
-  printf("Choose a option entering the corresponding number:\n");
+  printf("%s", header());
+  
   do{
-    printf("\n1 - ???\n2 - Return\n");
-    scanf("%d", &option);
+    puts("\n1 - Books\n2 - neh\n3 - Return");
+    scanf("%d", &op);
     system("cls||clear");
-    switch(option){
+    switch(op){
       case 1:
-        printf("Still in development, come back later!\n");
-        break;
+      printf("oo");
+      break;
       case 2:
-        break;
+      printf("kk");
+      break;
+      case 3:
+      mainMenu();
+      break;
       default:
-      printf("Please, enter a valid option!\n");   
+      printf("%s", messageError());
     }
-  }while(option != 2);
+  }while(op != 3);
+}
+
+const char * header(){
+  return 
+    "Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021"
+    "\n\nChoose a option entering the corresponding number:\n\a"; // "\a" == makes a sound 
+}
+
+const char * messageError(){
+  return 
+  "Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021"
+  "\n\nPlease, enter a valid option!\n";
 }

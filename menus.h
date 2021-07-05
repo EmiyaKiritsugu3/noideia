@@ -1,3 +1,4 @@
-int main_menu();
-void sub_menu01();
-void sub_menu02();
+void mainMenu();
+void subMenu01();
+void subMenu02();
+void header();
