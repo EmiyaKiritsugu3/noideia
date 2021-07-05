@@ -1,9 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct book Book;
+struct book{
+  char tittle[81];
+  char author[81];
+  int isbn;
+};
+
+typedef struct user{
+  char name[81];
+  char * rn;
+}User;
+
+
+
+
 void mainMenu();
 void subMenu01();
 void subMenu02();
+void registerBook(Book* b, int i);
 const char * header();
 const char * messageError();
 
@@ -38,7 +54,9 @@ void mainMenu(){
 
 void subMenu01(){
   
+  int n = 0;
   op = 0;
+  Book first;
   system("cls||clear");
   printf("%s", header());
   
@@ -48,7 +66,7 @@ void subMenu01(){
     system("cls||clear");
     switch(op){
       case 1:
-      printf("oo");
+      registerBook(&first, n);
       break;
       case 2:
       printf("kk");
@@ -100,4 +118,14 @@ const char * messageError(){
   return 
   "Generic Project to Prove C Language Programing Skill\nDeveloped by @inamarjunior - June, 2021"
   "\n\nPlease, enter a valid option!\n";
+}
+
+void registerBook(Book* b, int i){
+  printf("%s", "Book Tittle: ");
+  scanf("%s", b[i].tittle);
+  printf("%s", "Book Author: ");
+  scanf("%s", b[i].author);
+  printf("%s", "ISBN: ");
+  scanf("%d", &b[i].isbn);
+  getchar();
 }
