@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct book Book;
-struct book{
+typedef struct Book{
   char tittle[81];
   char author[81];
   int isbn;
-};
+}Book;
 
 typedef struct user{
   char name[81];
@@ -143,8 +142,8 @@ void registerBook(Book* b, int i){
   }while(answer != 0);
 }  
 
-void viewBook(Book* b, int i){
+/*void viewBook(Book* b, int i){
   printf("Tittle: %s", b[i].tittle);
   printf("Author: %s", b[i].author);
   printf("ISBN: %d", b[i].isbn);
-}
+}*/
