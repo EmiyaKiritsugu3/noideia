@@ -6,7 +6,7 @@ typedef struct Book{
   char tittle[81];
   char author[81];
   int isbn;
-}Book;
+}book;
 
 typedef struct user{
   char name[81];
@@ -15,11 +15,11 @@ typedef struct user{
 
 
 
-Book first;
+book first;
 void mainMenu();
 void subMenu01();
 void subMenu02();
-void registerBook(Book* b, int i);
+void registerBook(book* b, int i);
 void viewBook();
 const char * header();
 const char * messageError();
@@ -61,9 +61,11 @@ void subMenu01(){
   op = 0;
   
   system("cls||clear");
-  printf("%s", header());
+  
   
   do{  
+    
+    printf("%s", header());
     puts("\n1 - Register\n2 - View Library\n3 - Delete\n4 - Return");
     scanf("%d", &op);
     system("cls||clear");
@@ -72,7 +74,7 @@ void subMenu01(){
       registerBook(&first, n);
       break;
       case 2:
-      viewBook();
+      //viewBook();
       break;
       case 3:
       printf("Null");
@@ -123,7 +125,7 @@ const char * messageError(){
   "\n\nPlease, enter a valid option!\n";
 }
 
-void registerBook(Book* b, int i){
+void registerBook(book* b, int i){
   
   int answer;
 
@@ -138,6 +140,8 @@ void registerBook(Book* b, int i){
     nBook++;
     printf("%s", "Register another book? 1 for yes, 0 for not: ");
     scanf("%d", &answer);
+    getchar();
+    system("cls||clear");
 
   }while(answer != 0);
 }  
